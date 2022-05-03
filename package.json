@@ -42,8 +42,6 @@
     },
     "devDependencies": {
         "@types/node": "*",
-        "@types/lodash": "^4.0.0",
-        "@types/async": "^2.0.0",
         "@types/chai": "*",
         "@types/mocha": "*",
         "restify": "^4.3.0",
