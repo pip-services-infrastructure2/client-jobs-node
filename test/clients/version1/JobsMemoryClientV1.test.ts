@@ -1,4 +1,3 @@
-
 import { JobsMemoryClientV1 } from '../../../src/clients/version1/JobsMemoryClientV1';
 import { JobsClientV1Fixture } from './JobsClientV1Fixture';
 

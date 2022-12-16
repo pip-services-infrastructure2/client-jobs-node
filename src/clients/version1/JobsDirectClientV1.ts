@@ -19,12 +19,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.add_job');
         
         try {
-            return await this._controller.addJob(correlationId, newJob);
+            let res = await this._controller.addJob(correlationId, newJob);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -33,12 +33,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.add_uniq_job');
         
         try {
-            return await this._controller.addUniqJob(correlationId, newJob);
+            let res = await this._controller.addUniqJob(correlationId, newJob);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -47,12 +47,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.get_jobs');
         
         try {
-            return await this._controller.getJobs(correlationId, filter, paging);
+            let res = await this._controller.getJobs(correlationId, filter, paging);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -61,12 +61,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.get_by_id_job');
         
         try {
-            return await this._controller.getJobById(correlationId, jobId);
+            let res = await this._controller.getJobById(correlationId, jobId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -75,12 +75,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.start_job_by_id');
         
         try {
-            return await this._controller.startJobById(correlationId, jobId, timeout);
+            let res = await this._controller.startJobById(correlationId, jobId, timeout);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -89,12 +89,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.start_job_by_type');
         
         try {
-            return await this._controller.startJobByType(correlationId, jobType, timeout);
+            let res = await this._controller.startJobByType(correlationId, jobType, timeout);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -103,12 +103,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.extend_job');
         
         try {
-            return await this._controller.extendJob(correlationId, jobId, timeout);
+            let res = await this._controller.extendJob(correlationId, jobId, timeout);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -117,12 +117,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.abort_job');
         
         try {
-            return await this._controller.abortJob(correlationId, jobId);
+            let res = await this._controller.abortJob(correlationId, jobId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -131,12 +131,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.complete_job');
         
         try {
-            return await this._controller.completeJob(correlationId, jobId);
+            let res = await this._controller.completeJob(correlationId, jobId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -145,12 +145,12 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
         let timing = this.instrument(correlationId, 'jobs.delete_job_by_id');
         
         try {
-            return await this._controller.deleteJobById(correlationId, jobId);
+            let res = await this._controller.deleteJobById(correlationId, jobId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -160,11 +160,10 @@ export class JobsDirectClientV1 extends DirectClient<any> implements IJobsClient
 
         try {
             await this._controller.deleteJobs(correlationId);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 

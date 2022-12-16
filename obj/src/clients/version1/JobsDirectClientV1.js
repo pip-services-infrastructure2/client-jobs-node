@@ -22,14 +22,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.add_job');
             try {
-                return yield this._controller.addJob(correlationId, newJob);
+                let res = yield this._controller.addJob(correlationId, newJob);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -38,14 +37,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.add_uniq_job');
             try {
-                return yield this._controller.addUniqJob(correlationId, newJob);
+                let res = yield this._controller.addUniqJob(correlationId, newJob);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -54,14 +52,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.get_jobs');
             try {
-                return yield this._controller.getJobs(correlationId, filter, paging);
+                let res = yield this._controller.getJobs(correlationId, filter, paging);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -70,14 +67,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.get_by_id_job');
             try {
-                return yield this._controller.getJobById(correlationId, jobId);
+                let res = yield this._controller.getJobById(correlationId, jobId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -86,14 +82,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.start_job_by_id');
             try {
-                return yield this._controller.startJobById(correlationId, jobId, timeout);
+                let res = yield this._controller.startJobById(correlationId, jobId, timeout);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -102,14 +97,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.start_job_by_type');
             try {
-                return yield this._controller.startJobByType(correlationId, jobType, timeout);
+                let res = yield this._controller.startJobByType(correlationId, jobType, timeout);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -118,14 +112,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.extend_job');
             try {
-                return yield this._controller.extendJob(correlationId, jobId, timeout);
+                let res = yield this._controller.extendJob(correlationId, jobId, timeout);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -134,14 +127,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.abort_job');
             try {
-                return yield this._controller.abortJob(correlationId, jobId);
+                let res = yield this._controller.abortJob(correlationId, jobId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -150,14 +142,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.complete_job');
             try {
-                return yield this._controller.completeJob(correlationId, jobId);
+                let res = yield this._controller.completeJob(correlationId, jobId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -166,14 +157,13 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'jobs.delete_job_by_id');
             try {
-                return yield this._controller.deleteJobById(correlationId, jobId);
+                let res = yield this._controller.deleteJobById(correlationId, jobId);
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -183,13 +173,11 @@ class JobsDirectClientV1 extends pip_services3_rpc_nodex_1.DirectClient {
             let timing = this.instrument(correlationId, 'jobs.delete_jobs');
             try {
                 yield this._controller.deleteJobs(correlationId);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
