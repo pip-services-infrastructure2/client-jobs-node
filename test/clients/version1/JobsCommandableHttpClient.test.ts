@@ -4,7 +4,7 @@ import { References } from 'pip-services3-commons-nodex';
 
 import { JobsMemoryPersistence } from 'service-jobs-node';
 import { JobsController } from 'service-jobs-node';
-import { JobsHttpServiceV1 } from 'service-jobs-node';
+import { JobsCommandableHttpServiceV1 } from 'service-jobs-node';
 
 import { JobsCommandableHttpClientV1 } from '../../../src/clients/version1/JobsCommandableHttpClientV1';
 import { JobsClientV1Fixture } from './JobsClientV1Fixture';
@@ -12,7 +12,7 @@ import { JobsClientV1Fixture } from './JobsClientV1Fixture';
 suite('JobsCommandableHttpClientV1', () => {
     let persistence: JobsMemoryPersistence;
     let controller: JobsController;
-    let service: JobsHttpServiceV1;
+    let service: JobsCommandableHttpServiceV1;
     let client: JobsCommandableHttpClientV1;
     let fixture: JobsClientV1Fixture;
 
@@ -29,7 +29,7 @@ suite('JobsCommandableHttpClientV1', () => {
             'connection.host', 'localhost'
         );
 
-        service = new JobsHttpServiceV1();
+        service = new JobsCommandableHttpServiceV1();
         service.configure(httpConfig);
 
         client = new JobsCommandableHttpClientV1();
