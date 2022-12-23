@@ -8,7 +8,7 @@ import { JobV1 } from '../../data/version1/JobV1';
 import { NewJobV1 } from '../../data/version1/NewJobV1';
 import { IJobsClientV1 } from './IJobsClientV1';
 
-export class JobsMemoryClientV1 implements IJobsClientV1 {
+export class JobsMockClientV1 implements IJobsClientV1 {
 
     private _maxPageSize: number = 100;
     private _maxRetries = 10;

@@ -1,13 +1,15 @@
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
-import { JobV1 } from '../../../src/data/version1/JobV1';
+import { JobV1 } from '../../data/version1/JobV1';
 import { NewJobV1 } from '../../data/version1/NewJobV1';
 import { IJobsClientV1 } from './IJobsClientV1';
-export declare class JobsHttpClientV1 extends CommandableHttpClient implements IJobsClientV1 {
-    constructor();
-    private fixJob;
+export declare class JobsMockClientV1 implements IJobsClientV1 {
+    private _maxPageSize;
+    private _maxRetries;
+    private _items;
+    constructor(...items: JobV1[]);
+    private composeFilter;
     addJob(correlationId: string, newJob: NewJobV1): Promise<JobV1>;
     addUniqJob(correlationId: string, newJob: NewJobV1): Promise<JobV1>;
     getJobs(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<JobV1>>;
@@ -19,4 +21,11 @@ export declare class JobsHttpClientV1 extends CommandableHttpClient implements I
     completeJob(correlationId: string, jobId: string): Promise<JobV1>;
     deleteJobById(correlationId: string, jobId: string): Promise<JobV1>;
     deleteJobs(correlationId: string): Promise<void>;
+    cleanJobs(correlationId: string): Promise<void>;
+    private getPageByFilter;
+    private create;
+    private getOneById;
+    private deleteById;
+    private deleteByFilter;
+    private updatePartially;
 }

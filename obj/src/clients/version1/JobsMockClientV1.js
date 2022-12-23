@@ -9,14 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JobsMemoryClientV1 = void 0;
+exports.JobsMockClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
 const pip_services3_commons_nodex_2 = require("pip-services3-commons-nodex");
 const pip_services3_commons_nodex_3 = require("pip-services3-commons-nodex");
 const pip_services3_commons_nodex_4 = require("pip-services3-commons-nodex");
 const pip_services3_commons_nodex_5 = require("pip-services3-commons-nodex");
 const JobV1_1 = require("../../data/version1/JobV1");
-class JobsMemoryClientV1 {
+class JobsMockClientV1 {
     constructor(...items) {
         this._maxPageSize = 100;
         this._maxRetries = 10;
@@ -270,5 +270,5 @@ class JobsMemoryClientV1 {
         });
     }
 }
-exports.JobsMemoryClientV1 = JobsMemoryClientV1;
-//# sourceMappingURL=JobsMemoryClientV1.js.map
+exports.JobsMockClientV1 = JobsMockClientV1;
+//# sourceMappingURL=JobsMockClientV1.js.map

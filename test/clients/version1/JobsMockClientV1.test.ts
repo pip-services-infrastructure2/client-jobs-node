@@ -1,14 +1,14 @@
-import { JobsMemoryClientV1 } from '../../../src/clients/version1/JobsMemoryClientV1';
+import { JobsMockClientV1 } from '../../../src/clients/version1/JobsMockClientV1';
 import { JobsClientV1Fixture } from './JobsClientV1Fixture';
 
 
-suite('JobsMemoryClientV1', () => {
+suite('JobsMockClientV1', () => {
 
-    let client: JobsMemoryClientV1;
+    let client: JobsMockClientV1;
     let fixture: JobsClientV1Fixture;
 
     setup((done) => {
-        client = new JobsMemoryClientV1();
+        client = new JobsMockClientV1();
         fixture = new JobsClientV1Fixture(client);
         done();
     });

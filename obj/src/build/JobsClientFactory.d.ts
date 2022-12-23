@@ -3,6 +3,7 @@ import { Descriptor } from 'pip-services3-commons-nodex';
 export declare class JobsClientFactory extends Factory {
     Descriptor: Descriptor;
     ClientNullDescriptor: Descriptor;
+    MockDirectDescriptor: Descriptor;
     ClientDirectDescriptor: Descriptor;
     ClientHttpDescriptor: Descriptor;
     constructor();
