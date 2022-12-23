@@ -281,13 +281,13 @@ class JobsNullClientV1 implements IJobsClientV1 {
 }
 ```
 
-## <a name="client_null"></a> JobsMemoryClientV1 class
+## <a name="client_null"></a> JobsMockClientV1 class
 
-JobsMemoryClientV1 is a dummy client that mimics the real client and service. 
+JobsMockClientV1 is a dummy client that mimics the real client and service. 
 It can be useful in testing scenarios to cut dependencies on external microservices.
 
 ```typescript
-class JobsMemoryClientV1 implements IJobsClientV1 {
+class JobsMockClientV1 implements IJobsClientV1 {
     constructor();
     addJob(correlationId: string, newJob: NewJobV1, callback: (err: any, job: JobV1) => void): void;
     addUniqJob(correlationId: string, newJob: NewJobV1, callback: (err: any, job: JobV1) => void): void;
